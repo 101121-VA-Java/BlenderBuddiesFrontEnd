@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SmoothiesComponent } from './smoothies/smoothies.component';
-import { UsersComponent } from './users/users.component';
-import { AdminsComponent } from './admins/admins.component';
-import { RecipeComponent } from './recipe/recipe.component';
-import { IngredientsComponent } from './ingredients/ingredients.component';
+import { SmoothiesComponent } from './components/smoothies/smoothies.component';
+import { UsersComponent } from './components/users/users.component';
+import { AdminsComponent } from './components/admins/admins.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { IngredientsComponent } from './components/ingredients/ingredients.component';
+import { NavComponent } from './components/nav/nav.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserDashComponent } from './components/user-dash/user-dash.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +23,17 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
     UsersComponent,
     AdminsComponent,
     RecipeComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    NavComponent,
+    LoginComponent,
+    UserDashComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

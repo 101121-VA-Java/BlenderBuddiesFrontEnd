@@ -1,0 +1,47 @@
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="Enter First Name"
+        #firstName
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Enter Last Name"
+        #lastName
+      />
+    </div> 
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="Enter Username"
+        #username
+      />
+    </div> 
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control"
+        id="password"
+        placeholder="Password"
+        #password
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input  type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email" #email />
+    </div>
+    <input class="btn btn-outline-secondary" value="Register" (click)="register(firstName.value, lastName.value, username.value, password.value, email.value)">
+
+  <!-- <input class="btn btn-outline-secondary" value="Register" (click)="register(firstName,lastName, username, password, email)"> -->
