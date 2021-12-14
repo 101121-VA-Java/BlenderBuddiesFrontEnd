@@ -34,6 +34,7 @@ export class AuthService {
         // retrieves the token from the headers to be leveraged in future http requests
         this.token = response.headers.get('Authorization') || '';
         console.log(this.token);
+        console.log(response);
       }
       )
     );
@@ -46,27 +47,20 @@ export class AuthService {
   }
 
   registerUser(firstName: string, lastName: string, username: string, password: string, email: string){
-    //let newUser: any = `username=${username}&password=${password}&firstName=${firstName}&lastName=${lastName}&email=${email}&role='USER'`;
+    
     let newUser: any = {username, password, firstName, lastName, email, role:'USER'}
     console.log(newUser);
-    return this.http.post(`${environment.API_URL}/users`, newUser, {
-      headers: {
-        // leverages form params to not expose credentials to the url
-          'Content-type': 'application/json'
-        },
-        // indicates that we'll be interacting with the whole response rather than just the response body, gives us access to the headers
-        observe: 'response',
-      }).pipe(
-        map(response => {
-          // takes the principal user returned to be stored in the current user variable for use in other components
-          newUser = response.body;
-          // retrieves the token from the headers to be leveraged in future http requests
-          // this.token = response.headers.get('Authorization') || '';
-          // console.log(this.token);
-        }
-        )
-      );
-  
-    }
+    
+    return this.http.post(`${environment.API_URL}/users`, newUser,{
+      observe: 'response',
+    }).pipe(
+      map(response => {
+
+        console.log(response);
+      }
+      )
+    );
+  }
+      
   
 }

@@ -24,15 +24,11 @@ export class RegisterComponent implements OnInit {
   register(firstName: string, lastName: string, username: string, password: string, email: string){
   // register(){
     console.log("Register is being invoked")
-    this.authService.registerUser(firstName, lastName, username, password, email).subscribe(
-      (response)=> {
-        
-        this.router.navigate(['login']);
-      },
-      err => {
-        this.message = err.error.error;
-      }
-    );
-    
+    this.authService.registerUser(firstName, lastName, username, password, email)
+    .subscribe(
+      (data) => {
+        console.log(data);
+          this.router.navigate(['login']);
+      });
   }
 }
