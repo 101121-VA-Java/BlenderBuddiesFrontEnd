@@ -15,6 +15,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserDashComponent } from './components/user-dash/user-dash.component';
 import { RegisterComponent } from './components/register/register.component';
+import { IngrFormComponent } from './components/ingr-form/ingr-form.component';
+import { SmoothieFormComponent } from './components/smoothie-form/smoothie-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RegisterComponent } from './components/register/register.component';
     NavComponent,
     LoginComponent,
     UserDashComponent,
-    RegisterComponent
+    RegisterComponent,
+    IngrFormComponent,
+    SmoothieFormComponent
   ],
   imports: [
     BrowserModule,
