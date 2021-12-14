@@ -51,15 +51,7 @@ export class AuthService {
     let newUser: any = {username, password, firstName, lastName, email, role:'USER'}
     console.log(newUser);
     
-    return this.http.post(`${environment.API_URL}/users`, newUser,{
-      observe: 'response',
-    }).pipe(
-      map(response => {
-
-        console.log(response);
-      }
-      )
-    );
+    return this.http.post(`${environment.API_URL}/users`, newUser);
   }
       
   
