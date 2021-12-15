@@ -4,40 +4,15 @@
             Smoothie Recipes 
         </h1>
     </div>
-    <!-- <form style="padding-top: 2.5em;">
-        <div id="bottomBorder" class="form-row">
-            <h1 class="display-4 text-center">Smoothies</h1>
-        </div>
-        <hr>
-        <br>
-        <div><span>id: </span>{{smoothie.id}}</div>
-        <div>
-            <label for="name">Smoothie : </label>
-            <input id="name" [(ngModel)]="smoothie.name" placeholder="name">
-        </div>
-
-        <div class="form-row  text-center">
-            <label>Username:</label>
-            <br>
-            <input class="inputstyle" type="text" name="username" #username>
-            <br>
-            <br>
-            <br>
-            <label>Password:</label>
-            <br>
-            <input class="inputstyle" type="password" name="password" #password>
-            <br>
-            <br>
-            <br>
-            <br>
-            <input class="btn btn-outline-secondary" value="Login" (click)='login(username.value, password.value)'>
-            <br>
-            <br>
-            <input class="btn btn-outline-secondary" value="Register" (click)='registerPage()'>
-
-            <br>
-            <br>
-            <div style="color:red;">{{message}}</div>
-        </div>
-    </form> -->
+    <h1>
+        Smoothies
+    </h1>
+    <a class='nav-link' routerLink="/smoothie-form">New Smoothie</a>
+    <h3>
+        <p *ngFor=''>
+            {{smoothie.name}}
+            {{smoothie.nutritions}}
+        </p>
+    </h3>
+    
 </div>
