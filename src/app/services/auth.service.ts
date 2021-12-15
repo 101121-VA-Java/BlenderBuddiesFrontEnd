@@ -33,6 +33,7 @@ export class AuthService {
         this.currentUser = response.body as Principal;
         // retrieves the token from the headers to be leveraged in future http requests
         this.token = response.headers.get('Authorization') || '';
+        sessionStorage.setItem("token", this.token);
         console.log(this.token);
       }
       )
@@ -40,33 +41,17 @@ export class AuthService {
 
   }
 
-  logout(): void {
-    this.currentUser = undefined;
-    this.token = '';
-  }
+  
 
   registerUser(firstName: string, lastName: string, username: string, password: string, email: string){
-    //let newUser: any = `username=${username}&password=${password}&firstName=${firstName}&lastName=${lastName}&email=${email}&role='USER'`;
+    
     let newUser: any = {username, password, firstName, lastName, email, role:'USER'}
     console.log(newUser);
-    return this.http.post(`${environment.API_URL}/users`, newUser, {
-      headers: {
-        // leverages form params to not expose credentials to the url
-          'Content-type': 'application/json'
-        },
-        // indicates that we'll be interacting with the whole response rather than just the response body, gives us access to the headers
-        observe: 'response',
-      }).pipe(
-        map(response => {
-          // takes the principal user returned to be stored in the current user variable for use in other components
-          newUser = response.body;
-          // retrieves the token from the headers to be leveraged in future http requests
-          // this.token = response.headers.get('Authorization') || '';
-          // console.log(this.token);
-        }
-        )
-      );
-  
-    }
+    
+    return this.http.post(`${environment.API_URL}/users`, newUser);
+  }
+  // public get currentUserValue(){
+  //   return this.token;
+  // }   
   
 }

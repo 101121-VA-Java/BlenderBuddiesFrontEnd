@@ -5,14 +5,25 @@
             <a class='nav-link' routerLink=''>Home</a>
         </li>
         <li class='nav-item'>
-            <a class='nav-link' routerLink='userdash'>Dash</a>
+            <a class='nav-link' routerLink='userdash' *ngIf="isUser">Dash</a>
+
+        </li>
+        <li class='nav-item'>
+            <a class='nav-link' routerLink='admindash' *ngIf="isAdmin">Admin Dash</a>
+
+        </li>
+        <li class='nav-item'>
+            <a class='nav-link' routerLink='profile' *ngIf="isUser || isAdmin">Profile</a>
 
         </li>
         
     </ul>
     <ul class="navbar-nav ms-auto">
         <li class='nav-item'>
-            <a class='nav-link' routerLink='login'>Login</a>
+            <a class='nav-link' routerLink='login'*ngIf="!isUser && !isAdmin">Login</a>
+        </li>
+        <li class='nav-item'>
+            <a class='nav-link' routerLink='login' *ngIf="isUser || isAdmin" (click)="logout()">Logout</a>
         </li>
     </ul>
 </nav>
