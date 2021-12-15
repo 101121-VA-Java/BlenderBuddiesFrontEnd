@@ -7,6 +7,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SmoothiesComponent } from './components/smoothies/smoothies.component';
 import { UserDashComponent } from './components/user-dash/user-dash.component';
+import { AuthGuard } from './admin.guard';
+import { Role } from './models/role';
 
 
 const routes: Routes = [{
@@ -17,21 +19,28 @@ const routes: Routes = [{
   component: LoginComponent
 },{
   path: 'userdash',
-  component: UserDashComponent
+  component: UserDashComponent,
+  canActivate: [AuthGuard],
+  data: { roles: [Role.USER]}
 },
 {
   path: 'register',
   component: RegisterComponent
 },{
   path: 'profile',
-  component: ProfileComponent
+  component: ProfileComponent,
+  canActivate: [AuthGuard]
 },{
   path: 'admindash',
-  component: AdmindashComponent
+  component: AdmindashComponent,
+  canActivate: [AuthGuard],
+  data: { roles: [Role.ADMIN]}
 },{
   path: 'smoothies',
-  component: SmoothiesComponent
-}];
+  component: SmoothiesComponent,
+  canActivate: [AuthGuard],
+},
+{ path: '**', redirectTo: '' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

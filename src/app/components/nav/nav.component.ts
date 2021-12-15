@@ -9,6 +9,22 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
+  get isAdmin() {
+    let token = sessionStorage.getItem("token");
+
+    return token != null && token.split(":")[1] === "ADMIN" ;
+  }
+
+  get isUser() {
+    let token = sessionStorage.getItem("token");
+
+    return token != null && token.split(":")[1] === "USER" ;
+  }
+
+  logout(): void {
+    sessionStorage.clear();
+  }
+  
   ngOnInit(): void {
   }
 

@@ -33,18 +33,15 @@ export class AuthService {
         this.currentUser = response.body as Principal;
         // retrieves the token from the headers to be leveraged in future http requests
         this.token = response.headers.get('Authorization') || '';
+        sessionStorage.setItem("token", this.token);
         console.log(this.token);
-        console.log(response);
       }
       )
     );
 
   }
 
-  logout(): void {
-    this.currentUser = undefined;
-    this.token = '';
-  }
+  
 
   registerUser(firstName: string, lastName: string, username: string, password: string, email: string){
     
@@ -53,6 +50,8 @@ export class AuthService {
     
     return this.http.post(`${environment.API_URL}/users`, newUser);
   }
-      
+  // public get currentUserValue(){
+  //   return this.token;
+  // }   
   
 }
