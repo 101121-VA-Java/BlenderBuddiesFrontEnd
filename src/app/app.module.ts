@@ -18,6 +18,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { IngrFormComponent } from './components/ingr-form/ingr-form.component';
 import { SmoothieFormComponent } from './components/smoothie-form/smoothie-form.component';
 import { AdmindashComponent } from './components/admindash/admindash.component';
+import { FancyNavComponent } from './components/fancy-nav/fancy-nav.component';
 
 
 @NgModule({
@@ -33,8 +34,9 @@ import { AdmindashComponent } from './components/admindash/admindash.component';
     UserDashComponent,
     RegisterComponent,
     IngrFormComponent,
-    SmoothieFormComponent
-    AdmindashComponent
+    SmoothieFormComponent,
+    AdmindashComponent,
+    FancyNavComponent
   ],
   
   imports: [
