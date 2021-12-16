@@ -8,10 +8,14 @@
             <a class='nav-link' routerLink='userdash' *ngIf="isUser">Dash</a>
 
         </li>
+        <!-- Add Drop down menu to display User Actions -->
+
         <li class='nav-item'>
             <a class='nav-link' routerLink='admindash' *ngIf="isAdmin">Admin Dash</a>
 
         </li>
+        <!-- Add Drop down menu to display Admin Actions -->
+
         <li class='nav-item'>
             <a class='nav-link' routerLink='profile' *ngIf="isUser || isAdmin">Profile</a>
 
