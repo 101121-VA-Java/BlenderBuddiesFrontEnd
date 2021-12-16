@@ -15,7 +15,10 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserDashComponent } from './components/user-dash/user-dash.component';
 import { RegisterComponent } from './components/register/register.component';
+import { IngrFormComponent } from './components/ingr-form/ingr-form.component';
+import { SmoothieFormComponent } from './components/smoothie-form/smoothie-form.component';
 import { AdmindashComponent } from './components/admindash/admindash.component';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +32,11 @@ import { AdmindashComponent } from './components/admindash/admindash.component';
     LoginComponent,
     UserDashComponent,
     RegisterComponent,
+    IngrFormComponent,
+    SmoothieFormComponent
     AdmindashComponent
   ],
+  
   imports: [
     BrowserModule,
     FormsModule,
