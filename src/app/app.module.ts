@@ -17,6 +17,8 @@ import { UserDashComponent } from './components/user-dash/user-dash.component';
 import { RegisterComponent } from './components/register/register.component';
 import { IngrFormComponent } from './components/ingr-form/ingr-form.component';
 import { SmoothieFormComponent } from './components/smoothie-form/smoothie-form.component';
+import { AdmindashComponent } from './components/admindash/admindash.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { SmoothieFormComponent } from './components/smoothie-form/smoothie-form.
     RegisterComponent,
     IngrFormComponent,
     SmoothieFormComponent
+    AdmindashComponent
   ],
+  
   imports: [
     BrowserModule,
     FormsModule,
