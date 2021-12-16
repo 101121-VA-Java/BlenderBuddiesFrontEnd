@@ -11,6 +11,7 @@ import { SmoothiesComponent } from './components/smoothies/smoothies.component';
 import { UserDashComponent } from './components/user-dash/user-dash.component';
 import { AuthGuard } from './admin.guard';
 import { Role } from './models/role';
+import { IngredientsComponent } from './components/ingredients/ingredients.component';
 
 
 const routes: Routes = [{
@@ -48,6 +49,10 @@ const routes: Routes = [{
 },{
   path: 'smoothies',
   component: SmoothiesComponent,
+  canActivate: [AuthGuard],
+},{
+  path: 'ingredients',
+  component: IngredientsComponent,
   canActivate: [AuthGuard],
 },
 { path: '**', redirectTo: '' }];

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IngredientService } from 'src/app/services/ingredient.service';
 
 @Component({
   selector: 'app-ingredients',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class IngredientsComponent implements OnInit {
   openform!: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private ingredientService: IngredientService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,9 +24,18 @@ export class IngredientsComponent implements OnInit {
   onClickOpenForm(){
     this.openform=true;  
   }
-
+  message: string = '';
+  fruit?: any;
   ingrSubmit(){
       // add ingredient to database, then redirect to ingredients page
       this.router.navigate(['ingredients']);
     }
+
+    Fruit(name: string){
+
+      this.fruit = this.ingredientService.getFruit(name)
+        
+      
+    }
+
 }
