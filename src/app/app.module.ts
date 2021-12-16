@@ -33,7 +33,7 @@ import { AdmindashComponent } from './components/admindash/admindash.component';
     UserDashComponent,
     RegisterComponent,
     IngrFormComponent,
-    SmoothieFormComponent
+    SmoothieFormComponent,
     AdmindashComponent
   ],
   

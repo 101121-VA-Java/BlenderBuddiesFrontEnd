@@ -50,8 +50,5 @@ export class AuthService {
     
     return this.http.post(`${environment.API_URL}/users`, newUser);
   }
-  // public get currentUserValue(){
-  //   return this.token;
-  // }   
-  
+ 
 }

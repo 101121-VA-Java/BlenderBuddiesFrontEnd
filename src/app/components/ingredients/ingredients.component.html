@@ -2,7 +2,8 @@
     <h1>
         Ingredients
     </h1>
-    <div [hidden]="!openform">Add New Ingredient
+    <div [hidden]="!openform">
+    <div>Add New Ingredient
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" placeholder="Enter Ingredient Name" #name />
     </div>
@@ -34,6 +35,7 @@
     <button class="btn btn-outline-secondary" value="Submit"
         ng-click="ingrSubmit(name.value, carb.value, prot.value, phat.value, calo.value, suga.value)">Submit</button>
 </div>
+</div>
 <h3>
     <!-- iterate through list of ingredients and print each with name and nutrition values -->
     <!-- <p *ngFor=''>
@@ -45,3 +47,5 @@
             {{ingredient.nutritions}}
         </p> -->
 </h3>
+<input class="inputstyle" type="text" name="username" #username>
+<input class="btn btn-outline-secondary" value="Search" (click)="Fruit(username.value)">
