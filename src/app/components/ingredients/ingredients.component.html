@@ -1,8 +1,11 @@
 <div>
   <h1>Ingredients</h1>
   <input
-  class="btn btn-outline-secondary" (click)='ingredHider()' value="Make New Ingredient">
-  <div *ngIf='someBoolean'>
+    class="btn btn-outline-secondary"
+    (click)="ingredHider()"
+    value="Make New Ingredient"
+  />
+  <div *ngIf="someBoolean">
     <div>
       Add New Ingredient
       <label for="name">Name</label>
