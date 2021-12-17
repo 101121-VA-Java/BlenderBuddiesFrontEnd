@@ -8,10 +8,13 @@ import { ProfileService } from '../../services/profile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  currentUser: any;
+  
 
   constructor(private profileService: ProfileService, private router: Router) { }
 
   ngOnInit(): void {
+    // this.currentUser = this.token.getUser();
   }
 
   redirProfileUpdate(){

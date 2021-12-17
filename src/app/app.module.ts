@@ -22,6 +22,7 @@ import { AdmindashComponent } from './components/admindash/admindash.component';
 import { FancyNavComponent } from './components/fancy-nav/fancy-nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileUpdateComponent } from './components/profile-update/profile-update.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ProfileUpdateComponent } from './components/profile-update/profile-upda
     SmoothieFormComponent,
     AdmindashComponent,
     FancyNavComponent,
+    ProfileComponent,
     ProfileUpdateComponent
   ],
   

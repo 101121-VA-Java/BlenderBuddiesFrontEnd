@@ -13,7 +13,7 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  // getUser(name: string){
+  // getProfile(name: string){
   //   console.log(name)
   //   this.http.get<any>(API_URL + 'users/{id}', { responseType: 'text' }).subscribe(data=>
   //   {
