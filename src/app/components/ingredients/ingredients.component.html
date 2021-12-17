@@ -1,51 +1,65 @@
 <div>
-    <h1>
-        Ingredients
-    </h1>
-    <div [hidden]="!openform">
-    <div>Add New Ingredient
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter Ingredient Name" #name />
-    </div>
-    <br>
-
+  <h1>Ingredients</h1>
+  <input
+  class="btn btn-outline-secondary" (click)='ingredHider()' value="Make New Ingredient">
+  <div *ngIf='someBoolean'>
     <div>
-        Nutrition:
+      Add New Ingredient
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter Ingredient Name"
+        #name
+      />
+    </div>
+    <br />
+
+    <div>Nutrition:</div>
+    <div class="form-group">
+      <label for="carb">Carbohydrates</label>
+      <input type="text" class="form-control" id="carb" #carb />
     </div>
     <div class="form-group">
-        <label for="carb">Carbohydrates</label>
-        <input type="text" class="form-control" id="carb" #carb />
+      <label for="prot">Protein</label>
+      <input type="text" class="form-control" id="prot" #prot />
     </div>
     <div class="form-group">
-        <label for="prot">Protein</label>
-        <input type="text" class="form-control" id="prot" #prot />
+      <label for="phat">Fat</label>
+      <input type="text" class="form-control" id="phat" #phat />
     </div>
     <div class="form-group">
-        <label for="phat">Fat</label>
-        <input type="text" class="form-control" id="phat" #phat />
+      <label for="calo">Calories</label>
+      <input type="text" class="form-control" id="calo" #calo />
     </div>
     <div class="form-group">
-        <label for="calo">Calories</label>
-        <input type="text" class="form-control" id="calo" #calo />
+      <label for="suga">Sugar</label>
+      <input type="text" class="form-control" id="suga" #suga />
     </div>
-    <div class="form-group">
-        <label for="suga">Sugar</label>
-        <input type="text" class="form-control" id="suga" #suga />
-    </div>
-    <button class="btn btn-outline-secondary" value="Submit"
-        ng-click="ingrSubmit(name.value, carb.value, prot.value, phat.value, calo.value, suga.value)">Submit</button>
-</div>
+    <button
+      class="btn btn-outline-secondary"
+      value="Submit"
+      ng-click="ingrSubmit(name.value, carb.value, prot.value, phat.value, calo.value, suga.value)"
+    >
+      Submit
+    </button>
+  </div>
 </div>
 <h3>
-    <!-- iterate through list of ingredients and print each with name and nutrition values -->
-    <!-- <p *ngFor=''>
+  <!-- iterate through list of ingredients and print each with name and nutrition values -->
+  <!-- <p *ngFor=''>
             {{fruit.name}}
             {{fruit.nutritions}}
         </p> -->
-    <!-- <p *ngFor=''>
+  <!-- <p *ngFor=''>
             {{ingredient.name}}
             {{ingredient.nutritions}}
         </p> -->
 </h3>
-<input class="inputstyle" type="text" name="username" #username>
-<input class="btn btn-outline-secondary" value="Search" (click)="Fruit(username.value)">
+<input class="inputstyle" type="text" name="username" #username />
+<input
+  class="btn btn-outline-secondary"
+  value="Search"
+  (click)="Fruit(username.value)"
+/>
