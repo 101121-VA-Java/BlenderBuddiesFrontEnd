@@ -14,28 +14,33 @@ export class IngredientsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   // redirect function for button
   ingrFormRedir() {
     console.log("redirecting to smoothie form...");
     this.router.navigate(['ingredient-form']);
   }
 
-  onClickOpenForm(){
-    this.openform=true;  
+  onClickOpenForm() {
+    this.openform = true;
   }
   message: string = '';
   fruit?: any;
-  ingrSubmit(){
-      // add ingredient to database, then redirect to ingredients page
-      this.router.navigate(['ingredients']);
-    }
+  ingrSubmit() {
+    // add ingredient to database, then redirect to ingredients page
+    this.router.navigate(['ingredients']);
+  }
 
-    Fruit(name: string){
+  Fruit(name: string) {
 
-      this.fruit = this.ingredientService.getFruit(name)
-        
-      
-    }
+    this.fruit = this.ingredientService.getFruit(name)
+
+
+  }
+
+  someBoolean: boolean = false;
+  ingredHider() {
+    this.someBoolean = !this.someBoolean;
+  }
 
 }
