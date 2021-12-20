@@ -21,6 +21,7 @@ import { SmoothieFormComponent } from './components/smoothie-form/smoothie-form.
 import { AdmindashComponent } from './components/admindash/admindash.component';
 import { FancyNavComponent } from './components/fancy-nav/fancy-nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UniquePipe } from './unique.pipe';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IngrFormComponent,
     SmoothieFormComponent,
     AdmindashComponent,
-    FancyNavComponent
+    FancyNavComponent,
+    UniquePipe
   ],
   
   imports: [

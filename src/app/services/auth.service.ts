@@ -40,9 +40,7 @@ export class AuthService {
     );
 
   }
-
   
-
   registerUser(firstName: string, lastName: string, username: string, password: string, email: string){
     
     let newUser: any = {username, password, firstName, lastName, email, role:'USER'}

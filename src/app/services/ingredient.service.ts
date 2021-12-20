@@ -12,21 +12,13 @@ export class IngredientService {
   constructor(private http: HttpClient) { }
   fruit?: any
   
-  getFruit(name: string){
+  getIngredientByName(name: string):Observable<any>{
     console.log(name)
-    this.http.get<any>(`https://www.fruityvice.com/api/fruit/${name}`).subscribe(data=>
-    {
-      this.fruit = data.total;
-    })
-    return this.fruit;
+    return this.http.get(`${environment.API_URL}/ingredients?name=${name}`);
   }
 
-
-
-
-
-
-
-
+  getAllIngredients():Observable<any>{
+    return this.http.get(`${environment.API_URL}/ingredients`);
+  }
 
 }
