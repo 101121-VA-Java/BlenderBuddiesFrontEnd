@@ -38,4 +38,8 @@ export class IngredientsComponent implements OnInit {
       
     }
 
+    someBoolean: boolean = false;
+    ingredHider() {
+        this.someBoolean = !this.someBoolean;
+      }
 }
