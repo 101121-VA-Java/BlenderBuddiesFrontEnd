@@ -12,6 +12,7 @@ import { UserDashComponent } from './components/user-dash/user-dash.component';
 import { AuthGuard } from './admin.guard';
 import { Role } from './models/role';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
+import { ProfileUpdateComponent } from './components/profile-update/profile-update.component';
 
 
 const routes: Routes = [{
@@ -41,6 +42,9 @@ const routes: Routes = [{
   path: 'profile',
   component: ProfileComponent,
   canActivate: [AuthGuard]
+},{
+  path: 'profile-update',
+  component: ProfileUpdateComponent
 },{
   path: 'admindash',
   component: AdmindashComponent,

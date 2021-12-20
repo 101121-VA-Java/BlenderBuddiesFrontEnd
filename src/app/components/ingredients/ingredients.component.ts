@@ -17,12 +17,6 @@ export class IngredientsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllIngredients()
   }
-  
-  // redirect function for button
-  ingrFormRedir() {
-    console.log("redirecting to smoothie form...");
-    this.router.navigate(['ingredient-form']);
-  }
 
   onClickOpenForm(){
     this.openform=true;  

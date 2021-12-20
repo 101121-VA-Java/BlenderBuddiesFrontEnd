@@ -22,6 +22,9 @@ import { AdmindashComponent } from './components/admindash/admindash.component';
 import { FancyNavComponent } from './components/fancy-nav/fancy-nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UniquePipe } from './unique.pipe';
+import { ProfileUpdateComponent } from './components/profile-update/profile-update.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { UniquePipe } from './unique.pipe';
     SmoothieFormComponent,
     AdmindashComponent,
     FancyNavComponent,
-    UniquePipe
+    UniquePipe,
+    ProfileComponent,
+    ProfileUpdateComponent
+
   ],
   
   imports: [
