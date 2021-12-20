@@ -4,13 +4,11 @@ import { environment } from 'src/environments/environment';
 import { map, Observable } from 'rxjs';
 import { User } from '../models/user';
 
-const API_URL = 'http://localhost:8080/';
-
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
-  user: any;
+  currentUser: any;
 
   constructor(private http: HttpClient) { }
 
