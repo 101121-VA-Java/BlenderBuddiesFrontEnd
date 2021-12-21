@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { IngredientService } from 'src/app/services/ingredient.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  Router
+} from '@angular/router';
+import {
+  IngredientService
+} from 'src/app/services/ingredient.service';
 
 
 @Component({
@@ -12,44 +19,50 @@ import { IngredientService } from 'src/app/services/ingredient.service';
 export class IngredientsComponent implements OnInit {
   openform!: boolean;
 
-  constructor(private ingredientService: IngredientService, private router: Router) { }
+  constructor(private ingredientService: IngredientService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllIngredients()
   }
 
-  onClickOpenForm(){
-    this.openform=true;  
+  onClickOpenForm() {
+    this.openform = true;
   }
   message: string = '';
-  ingredients?: any;
-  ingrSubmit(){
-      // add ingredient to database, then redirect to ingredients page
-      this.router.navigate(['ingredients']);
-    }
+  ingredients ? : any;
+  ingrSubmit() {
+    // add ingredient to database, then redirect to ingredients page
+    this.router.navigate(['ingredients']);
+  }
 
-    Ingredient(name: string){
+  Ingredient(name: string) {
 
-      this.ingredientService.getIngredientByName(name).subscribe((response) => {
-        this.ingredients = response;
-        console.log(this.ingredients[0].nutritions);
-      }
-      ); 
-    }
+    this.ingredientService.getIngredientByName(name).subscribe((response) => {
+      this.ingredients = response;
+      console.log(this.ingredients[0].nutritions);
+    });
+  }
 
-    getAllIngredients(){
-      this.ingredientService.getAllIngredients().subscribe((response) => {
-        this.ingredients = response;
-        console.log(this.ingredients[0].nutritions);
-      }
-      ); 
-    }
+  getAllIngredients() {
+    this.ingredientService.getAllIngredients().subscribe((response) => {
+      this.ingredients = response;
+      console.log(this.ingredients[0].nutritions);
+    });
+  }
 
   someBoolean: boolean = false;
   ingredHider() {
     this.someBoolean = !this.someBoolean;
   }
 
-    
+  registerIngredient(name: string, carbs: number, prot: number, phat: number, calo: number, suga: number) {
+    this.ingredientService.createNewIngredient(name, carbs, prot, phat, calo, suga)
+      .subscribe(
+        (data) => {
+          console.log(data);
+          // this.router.navigate(['login']);
+        });
+  }
+
 
 }
