@@ -30,7 +30,7 @@ export class IngredientsComponent implements OnInit {
 
     Ingredient(name: string){
 
-      this.ingredientService.getIngredientByName(name).subscribe((response) => {
+      this.ingredientService.getIngredientByName(name).subscribe((response: any) => {
         this.ingredients = response;
         console.log(this.ingredients[0].nutritions);
       }
@@ -38,7 +38,7 @@ export class IngredientsComponent implements OnInit {
     }
 
     getAllIngredients(){
-      this.ingredientService.getAllIngredients().subscribe((response) => {
+      this.ingredientService.getAllIngredients().subscribe((response: any) => {
         this.ingredients = response;
         console.log(this.ingredients[0].nutritions);
       }

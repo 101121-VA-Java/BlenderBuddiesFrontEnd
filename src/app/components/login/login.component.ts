@@ -19,11 +19,11 @@ export class LoginComponent implements OnInit {
   login(username: string, password: string) {
 
     this.authService.authenticate(username, password).subscribe(
-      (response) => {
+      (response: any) => {
         // navigates us back to the main page
         this.router.navigate(['']);
       },
-      err => {
+      (      err: { error: { error: string; }; }) => {
         this.message = err.error.error;
       }
     );
