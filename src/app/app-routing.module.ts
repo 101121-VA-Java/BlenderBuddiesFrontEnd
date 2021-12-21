@@ -13,6 +13,7 @@ import { AuthGuard } from './admin.guard';
 import { Role } from './models/role';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
 import { ProfileUpdateComponent } from './components/profile-update/profile-update.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 const routes: Routes = [{
@@ -21,11 +22,11 @@ const routes: Routes = [{
 }, {
   path: 'login',
   component: LoginComponent
-},{
+}, {
   path: 'userdash',
   component: UserDashComponent,
   canActivate: [AuthGuard],
-  data: { roles: [Role.USER]}
+  data: { roles: [Role.USER] }
 },
 {
   path: 'register',
@@ -38,25 +39,35 @@ const routes: Routes = [{
 {
   path: 'inger-form',
   component: IngrFormComponent
-},{
+},
+{
   path: 'profile',
   component: ProfileComponent,
   canActivate: [AuthGuard]
-},{
+},
+{
   path: 'profile-update',
   component: ProfileUpdateComponent
-},{
+},
+{
   path: 'admindash',
   component: AdmindashComponent,
   canActivate: [AuthGuard],
-  data: { roles: [Role.ADMIN]}
-},{
+  data: { roles: [Role.ADMIN] }
+},
+{
   path: 'smoothies',
   component: SmoothiesComponent,
   canActivate: [AuthGuard],
-},{
+},
+{
   path: 'ingredients',
   component: IngredientsComponent,
+  canActivate: [AuthGuard],
+},
+{
+  path: 'users',
+  component: UsersComponent,
   canActivate: [AuthGuard],
 },
 { path: '**', redirectTo: '' }];
