@@ -12,6 +12,10 @@ export class ProfileService {
   
 
   constructor(private http: HttpClient) { }
+
+  getAllUsers():Observable<any>{
+    return this.http.get(`${environment.API_URL}/users`);
+  }
   
   getUserById(id: any):Observable<any>{
     console.log(id)
@@ -25,13 +29,5 @@ export class ProfileService {
     
     return this.http.put(`${environment.API_URL}/users/${id}`, currentUser);
   }
-  // updateUser(data: string){
-  //   console.log(name)
-  //   this.http.put<any>('${environment.API_URL}/users/{id}', { responseType: 'text' }).subscribe(data=>
-  //   {
-  //     this.user = data;
-  //   })
-  //    return this.http.post(AUTH_API + '/users', { email, password, firstname, lastname}, httpOptions);
-  //   }
-  // }
+
 }

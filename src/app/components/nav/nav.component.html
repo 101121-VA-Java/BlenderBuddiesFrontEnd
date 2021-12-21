@@ -3,28 +3,33 @@
     <ul class="navbar-nav me-auto">
         <li class='nav-item'>
             <a class='nav-link' routerLink=''>Home</a>
-        </li>
-        <li class='nav-item'>
-            <a class='nav-link' routerLink='userdash' *ngIf="isUser">Dash</a>
-
-        </li>
-        <!-- Add Drop down menu to display User Actions -->
-
-        <li class='nav-item'>
-            <a class='nav-link' routerLink='admindash' *ngIf="isAdmin">Admin Dash</a>
-
-        </li>
-        <!-- Add Drop down menu to display Admin Actions -->
-
+        </li>        
         <li class='nav-item'>
             <a class='nav-link' routerLink='profile' *ngIf="isUser || isAdmin">Profile</a>
 
         </li>
-        
+
+        <li class='nav-item'>
+            <a class='nav-link' routerLink='ingredients' *ngIf="isAdmin">View Ingredients</a>
+
+        </li>
+        <li class='nav-item'>
+            <a class='nav-link' routerLink='smoothies' *ngIf="isAdmin || isUser">View Smoothies</a>
+
+        </li>
+        <li class='nav-item'>
+            <a class='nav-link' routerLink='smoothie-form' *ngIf="isAdmin || isUser">Create a Smoothie</a>
+
+        </li>
+        <li class='nav-item'>
+            <a class='nav-link' routerLink='users' *ngIf="isAdmin">View User List</a>
+
+        </li>
+
     </ul>
     <ul class="navbar-nav ms-auto">
         <li class='nav-item'>
-            <a class='nav-link' routerLink='login'*ngIf="!isUser && !isAdmin">Login</a>
+            <a class='nav-link' routerLink='login' *ngIf="!isUser && !isAdmin">Login</a>
         </li>
         <li class='nav-item'>
             <a class='nav-link' routerLink='login' *ngIf="isUser || isAdmin" (click)="logout()">Logout</a>
