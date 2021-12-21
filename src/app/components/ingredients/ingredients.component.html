@@ -16,6 +16,10 @@
       Nutrition:
     </div>
     <div class="form-group">
+      <label for="calo">Calories</label>
+      <input type="text" class="form-control" id="calo" #calo />
+    </div>
+    <div class="form-group">
       <label for="carb">Carbohydrates</label>
       <input type="text" class="form-control" id="carb" #carb />
     </div>
@@ -28,15 +32,11 @@
       <input type="text" class="form-control" id="phat" #phat />
     </div>
     <div class="form-group">
-      <label for="calo">Calories</label>
-      <input type="text" class="form-control" id="calo" #calo />
-    </div>
-    <div class="form-group">
       <label for="suga">Sugar</label>
       <input type="text" class="form-control" id="suga" #suga />
     </div>
     <button class="btn btn-outline-secondary" value="Submit"
-      ng-click="ingrSubmit(name.value, carb.value, prot.value, phat.value, calo.value, suga.value)">Submit</button>
+      (click)="registerIngredient(name.value, carb.value, prot.value, phat.value, calo.value, suga.value)">Submit</button>
   </div>
 </div>
 
