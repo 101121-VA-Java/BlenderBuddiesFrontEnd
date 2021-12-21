@@ -40,6 +40,19 @@ export class AuthService {
     );
 
   }
+
+  getUser() {
+    let token = sessionStorage.getItem("token");
+    if(token != null){
+      let id = token.split(":")[0];
+      if(id === '1') {
+        return 1;
+      } else {
+        return 2;
+      }
+    }
+    return null;
+  }
   
   registerUser(firstName: string, lastName: string, username: string, password: string, email: string){
     

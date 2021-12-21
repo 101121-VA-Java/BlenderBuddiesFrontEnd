@@ -9,7 +9,7 @@
                             alt="..." width="130" class="rounded mb-2 img-thumbnail">
 
                         <div class="media-body mb-5 text-white">
-                            <p class="mt-0 mb-0">{{currentUser.firstName}}  {{currentUser.lastName}}</p>
+                            <p class="mt-0 mb-0">{{profile.firstName}} {{profile.lastName}}</p>
                             <!-- {{currentUser.firstName}}  {{currentUser.lastName}} -->
                             <a class='profile-update' (click)='redirProfileUpdate()'>Edit profile</a>
                         </div>
@@ -35,9 +35,9 @@
             <div class="px-4 py-3">
                 <h5 class="mb-0">About</h5>
                 <div class="p-4 rounded shadow-sm bg-light">
-                    <p class="font-italic mb-0">Web Developer</p>
-                    <p class="font-italic mb-0">Lives in New York</p>
-                    <p class="font-italic mb-0">Photographer</p>
+                    <p class="font-italic mb-0">{{profile.username}}</p>
+                    <p class="font-italic mb-0">{{profile.email}}</p>
+                    <p class="font-italic mb-0">{{profile.role}}</p>
                 </div>
             </div>
             <!-- <div class="py-4 px-4">
