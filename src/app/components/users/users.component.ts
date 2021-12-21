@@ -14,13 +14,13 @@ export class UsersComponent implements OnInit {
   constructor(private profileService: ProfileService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getAllUsers();
   }
 
   getAllUsers(){
     this.profileService.getAllUsers().subscribe((response) => {
       this.users = response;
-    }
-    ); 
+    }); 
   }
 
 }
