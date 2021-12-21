@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user';
 import { ProfileService } from '../../services/profile.service';
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,25 +9,36 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  currentUser?: any;
-
-
-  constructor(private profileService: ProfileService, private router: Router) {
-    this.getUser();
-   }
+  currentUser: any;
+ 
+  constructor(private profileService: ProfileService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     // this.currentUser = this.token.getUser();
+    this.getProfile()
+   
   }
 
   redirProfileUpdate() {
     this.router.navigate(['profile-update']);
   }
 
-  getUser() {
-    this.profileService.getProfile().subscribe((response: any) => {
-      this.currentUser = response;
-    })
+  // getProfile(){
+  //   // this.profileService.getUserById().subscribe((response) => {
+  //     this.authService.getUser = response;
+  //     console.log(response);
+  //   }); 
+  // }
+  profile?: any
+  getProfile(){
+    let id = this.authService.getUser();
+    this.profileService.getUserById(id).subscribe((response) => {
+      this.profile = response;
+      console.log(this.profile);
+    });
+    
+    
   }
 
 }
+

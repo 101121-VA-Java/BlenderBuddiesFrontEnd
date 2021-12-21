@@ -9,16 +9,22 @@ import { User } from '../models/user';
 })
 export class ProfileService {
   currentUser: any;
+  
 
   constructor(private http: HttpClient) { }
-
-  getProfile(): Observable<User> {
-    return this.http.get(`${environment.API_URL}/users/{id}`)
-      .pipe(
-        map(response => response as User)
-      )
+  
+  getUserById(id: any):Observable<any>{
+    console.log(id)
+    return this.http.get(`${environment.API_URL}/users/${id}`);
   }
 
+  updateUser(id: number, firstName: string, lastName: string, username: string, password: string, email: string){
+    
+    let currentUser: any = {username, password, firstName, lastName, email}
+    console.log(currentUser);
+    
+    return this.http.put(`${environment.API_URL}/users/${id}`, currentUser);
+  }
   // updateUser(data: string){
   //   console.log(name)
   //   this.http.put<any>('${environment.API_URL}/users/{id}', { responseType: 'text' }).subscribe(data=>
