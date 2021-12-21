@@ -49,17 +49,16 @@ export class IngredientsComponent implements OnInit {
 
   registerIngredient(
     name: string,
-    carbs: number,
-    prot: number,
-    phat: number,
-    calo: number,
-    suga: number
+    carbs: string,
+    prot: string,
+    phat: string,
+    calo: string,
+    suga: string
   ) {
     this.ingredientService
-      .createNewIngredient(name, carbs, prot, phat, calo, suga)
+      .createNewIngredient(name, Number(carbs), Number(prot), Number(phat), Number(calo), Number(suga))
       .subscribe((data: any) => {
-        console.log(data);
-        // this.router.navigate(['login']);
+        window.location.reload();
       });
   }
 }

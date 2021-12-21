@@ -23,10 +23,9 @@ export class IngredientService {
 
   createNewIngredient(name: string, carbs: number, prot: number, phat: number, calo: number, suga: number){
     let newIngredient: Ingredient[] = [
-      {name: name, nutritions: [{carbohydrates: carbs, protein: prot, fat: phat, calories: calo, sugar: suga}]}
+      {name: name, nutritions: {carbohydrates: carbs, protein: prot, fat: phat, calories: calo, sugar: suga}}
     ]
-
-    return this.http.post(`${environment.API_URL}/ingredients`, newIngredient);
+    return this.http.post(`${environment.API_URL}/ingredients`, newIngredient[0]);
   }
 
 
@@ -34,7 +33,7 @@ export class IngredientService {
 
 interface Ingredient {
   name: string;
-  nutritions: Nutritions[]
+  nutritions: Nutritions
 }
 
 interface Nutritions {
