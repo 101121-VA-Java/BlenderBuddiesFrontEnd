@@ -49,7 +49,13 @@ export class IngredientsComponent implements OnInit {
   ingredHider() {
     this.someBoolean = !this.someBoolean;
   }
-
-    
+  registerIngredient(name: string, carbs: number, prot: number, phat: number, calo: number, suga: number){
+      this.ingredientService.createNewIngredient(name, carbs, prot, phat, calo, suga)
+      .subscribe(
+        (data) => {
+          console.log(data);
+            // this.router.navigate(['login']);
+        });
+    }
 
 }

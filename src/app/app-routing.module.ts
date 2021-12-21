@@ -58,6 +58,7 @@ const routes: Routes = [{
   path: 'ingredients',
   component: IngredientsComponent,
   canActivate: [AuthGuard],
+  data: { roles: [Role.ADMIN]}
 },
 { path: '**', redirectTo: '' }];
 

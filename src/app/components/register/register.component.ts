@@ -10,12 +10,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  // firstName: string="";
-  
-  // lastName: string="";
-  // username: string="";
-  // password: string="";
-  // email: string="";
 
   constructor(private authService: AuthService, private router: Router) { }
   message: string = '';
