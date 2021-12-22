@@ -11,6 +11,7 @@ import { Role } from './models/role';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
 import { ProfileUpdateComponent } from './components/profile-update/profile-update.component';
 import { UsersComponent } from './components/users/users.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
 
 
 const routes: Routes = [{
@@ -26,7 +27,8 @@ const routes: Routes = [{
 },
 {
   path: 'smoothie-form',
-  component: SmoothieFormComponent
+  component: SmoothieFormComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'profile',
@@ -35,7 +37,8 @@ const routes: Routes = [{
 },
 {
   path: 'profile-update',
-  component: ProfileUpdateComponent
+  component: ProfileUpdateComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'smoothies',
@@ -46,10 +49,17 @@ const routes: Routes = [{
   path: 'ingredients',
   component: IngredientsComponent,
   canActivate: [AuthGuard],
+  data: { roles: ['ADMIN'] }
 },
 {
   path: 'users',
   component: UsersComponent,
+  canActivate: [AuthGuard],
+  data: { roles: ['ADMIN'] }
+},
+{
+  path: 'recipe',
+  component: RecipeComponent,
   canActivate: [AuthGuard],
 },
 { path: '**', redirectTo: '' }];
