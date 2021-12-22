@@ -4,7 +4,7 @@
     </h1>
 </div>
 <br>
-<h3>
+<h6>
     <table class="users-table">
         <thead>
             <tr>
@@ -24,8 +24,9 @@
                 <td>{{user.username}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.role}}</td>
+                <input class="btn btn-outline-secondary" value="Change Role" (click)="updateSelectedUser(user.role.id, user.role.value)">
             </tr>
             <tr>
         </tbody>
     </table>
-</h3>
+</h6>
