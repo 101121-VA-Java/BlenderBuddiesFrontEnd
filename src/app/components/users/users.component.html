@@ -24,7 +24,7 @@
                 <td>{{user.username}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.role}}</td>
-                <input class="btn btn-outline-secondary" value="Change Role" (click)="updateSelectedUser(user.role.id, user.role.value)">
+                <input id="{{user.userId}}" class="btn btn-outline-secondary" value="Change Role" (click)="updateSelectedUser(user.id)">
             </tr>
             <tr>
         </tbody>

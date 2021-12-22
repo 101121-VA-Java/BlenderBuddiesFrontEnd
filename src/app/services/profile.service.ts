@@ -30,14 +30,11 @@ export class ProfileService {
     return this.http.put(`${environment.API_URL}/users/${id}`, currentUser);
   }
 
-  updateUserRole(id: number, role: string) {
-    let user: any = {id, role}
+  updateUserRole(id: number) {
+    let user: any = {id}
+    console.log(id)
     if(this.user.role = "USER"){
-       let user: any = {id, role: "ADMIN"}
-    } else {
-      let user: any = {id, role: "USER"}
     }
-    console.log(user)
     return this.http.put(`${environment.API_URL}/users/${id}`, user);
   }
 

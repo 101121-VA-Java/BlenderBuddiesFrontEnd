@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersComponent implements OnInit {
   users: any;
+  user: any;
 
   constructor(private authService: AuthService, private profileService: ProfileService, private http: HttpClient, private router: Router) { }
 
@@ -25,15 +26,20 @@ export class UsersComponent implements OnInit {
     }); 
   }
 
-  updateSelectedUser(id: number, role: string) {
-    if (id != null) {
+  updateSelectedUser(id: number) {
+    let currentUser = this.authService.getUser();
+    this.profileService.getUserById(id)
 
-      this.profileService.updateUserRole(id, role)
+    if (id != null && id != currentUser) {
+      this.profileService.updateUserRole(id)
         .subscribe(
-          (data) => {
-            console.log(data);
+          (response) => {
+            this.user = response;
+            console.log(response);
             this.router.navigate(['users']);
           });
+    } else {
+
     }
   }
 
