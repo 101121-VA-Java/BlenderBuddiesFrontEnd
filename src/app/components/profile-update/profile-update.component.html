@@ -1,22 +1,22 @@
 <div class="form-group">
     <label for="firstName">First Name</label>
-    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" #firstName />
+    <input type="text" class="form-control" id="firstName" placeholder={{profile.firstName}} #firstName />
   </div>
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" #lastName />
+    <input type="text" class="form-control" id="lastName" placeholder={{profile.lastName}} #lastName />
   </div>
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" class="form-control" id="username" placeholder="Enter Username" #username />
+    <input type="text" class="form-control" id="username" placeholder={{profile.username}} #username />
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password" #password />
+    <input type="password" class="form-control" id="password" placeholder={{profile.password}} #password />
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email" #email />
+    <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder={{profile.email}} #email />
   </div>
   <input class="btn btn-outline-secondary" value="Update"
     (click)="updateUser(firstName.value, lastName.value, username.value, password.value, email.value)">
