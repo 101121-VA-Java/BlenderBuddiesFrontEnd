@@ -26,20 +26,20 @@ export class UsersComponent implements OnInit {
     }); 
   }
 
-  updateSelectedUser(id: number) {
+  updateSelectedUser(id: any) {
+    
+    let userId = parseInt(id.id);
+    console.log(userId);
     let currentUser = this.authService.getUser();
     // this.profileService.getUserById(id)
 
-    if (id != null && id != currentUser) {
-      this.profileService.updateUserRole(id)
+    if (userId != null && userId != currentUser && userId != 1) {
+      this.profileService.updateUserRole(userId)
         .subscribe(
           (response) => {
             this.user = response;
-            console.log(response);
-            this.router.navigate(['users']);
+            window.location.reload();
           });
-    } else {
-
     }
   }
 
