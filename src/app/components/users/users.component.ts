@@ -28,7 +28,7 @@ export class UsersComponent implements OnInit {
 
   updateSelectedUser(id: number) {
     let currentUser = this.authService.getUser();
-    this.profileService.getUserById(id)
+    // this.profileService.getUserById(id)
 
     if (id != null && id != currentUser) {
       this.profileService.updateUserRole(id)
