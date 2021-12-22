@@ -58,7 +58,7 @@ export class IngredientsComponent implements OnInit {
     this.ingredientService
       .createNewIngredient(name, Number(carbs), Number(prot), Number(phat), Number(calo), Number(suga))
       .subscribe((data: any) => {
-        window.location.reload();
+        // window.location.reload();
       });
   }
 }

@@ -53,6 +53,15 @@ export class AuthService {
     }
     return null;
   }
+
+  getRole(){
+    let token = sessionStorage.getItem("token");
+    if(token != null){
+      let role = token.split(":")[1];
+      return role;
+    }
+    return null;
+  }
   
   registerUser(firstName: string, lastName: string, username: string, password: string, email: string){
     
