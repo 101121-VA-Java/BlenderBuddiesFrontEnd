@@ -1,54 +1,21 @@
 <div class="container" style="margin-top:50px;">
   <div class="row">
-    <div class="col-md-3">
-      <div class="card-sl">
-        <div class="card-image">
-          <img src="https://hips.hearstapps.com/del.h-cdn.co/assets/16/19/1462829771-sunshine-daydream.jpg" />
-        </div>
+    <div class="col-md-3" *ngFor='let smoothie of smoothies | unique'>
+      
+        <div class="card-sl">
+          <div class="card-image">
+            <img src={{smoothie.url}} />
+          </div>
 
-        <a class="card-action"><i class="fa fa-heart"></i></a>
-        <div id="smoothie_name" class="card-heading">
-          Sunshine Dream
-        </div>
-        <div id="smoothie_descrip" class="card-text">
-          Sunshine Dream is a smoothie that seemingly has strawberries and peaches?
-        </div>
-        <a class="card-button"> See Recipe</a>
+          <a class="card-action"><i class="fa fa-heart"></i></a>
+          <div id="smoothie_name" class="card-heading">
+            {{smoothie.name}}
+          </div>
+          <div id="smoothie_descrip" class="card-text">
+            {{smoothie.descrip}}
+          </div>
+          <a class="card-button" id={{smoothie.smoothId}} #id (click)="smoothieRecipeRedir(id)"> See Recipe</a>
+        
       </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card-sl">
-        <div class="card-image">
-          <img src="../../../assets/Smoothies/denis-tuksar-9RmKpWdcun0-unsplash.jpg" />
-        </div>
-
-        <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
-        <div id="smoothie_name" class="card-heading">
-          Strawberry Magic
-        </div>
-        <div id="smoothie_descrip" class="card-text">
-          Do you like strawberries then you'll love this smoothie!!
-        </div>
-        <a class="card-button"> See Recipe</a>
-      </div>
-
-    </div>
-    <div class="col-md-3">
-      <div class="card-sl">
-        <div class="card-image">
-          <img src="../../../assets/Smoothies/giorgi-iremadze-3OV0ft7mG_o-unsplash.jpg" />
-        </div>
-
-        <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
-        <div id="smoothie_name" class="card-heading">
-          Green Day
-        </div>
-        <div id="smoothie_descrip" class="card-text">
-          Just shove a bunch of green stuff in here man.
-        </div>
-        <a class="card-button"> See Recipe</a>
-      </div>
-
     </div>
   </div>
-</div>
