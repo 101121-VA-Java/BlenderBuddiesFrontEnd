@@ -27,6 +27,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     UniquePipe,
     ProfileComponent,
     ProfileUpdateComponent
-
   ],
   
   imports: [
