@@ -37,8 +37,8 @@ export class UsersComponent implements OnInit {
           (response) => {
             this.user = response;
             this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-              this.router.navigate([currentRoute]);
-          })
+              this.router.navigate(['users']);
+          }) 
         });
     }
   }
