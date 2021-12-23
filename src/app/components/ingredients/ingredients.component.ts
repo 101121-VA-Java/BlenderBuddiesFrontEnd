@@ -47,10 +47,13 @@ export class IngredientsComponent implements OnInit {
   }
 
   registerIngredient(name: string, carbs: string, prot: string, phat: string, calo: string, suga: string) {
+    const currentRoute = this.router.url;
     this.ingredientService
       .createNewIngredient(name, Number(carbs), Number(prot), Number(phat), Number(calo), Number(suga))
       .subscribe((data: any) => {
-        window.location.reload();
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate([currentRoute]);
+      })
       });
   }
 }
