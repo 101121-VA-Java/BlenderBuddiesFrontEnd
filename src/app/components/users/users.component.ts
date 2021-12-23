@@ -31,12 +31,15 @@ export class UsersComponent implements OnInit {
     let currentUser = this.authService.getUser();
 
     if (userId != null && userId != currentUser && userId != 1) {
+      const currentRoute = this.router.url;
       this.profileService.updateUserRole(userId)
         .subscribe(
           (response) => {
             this.user = response;
-            window.location.reload();
-          });
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate([currentRoute]);
+          })
+        });
     }
   }
 
