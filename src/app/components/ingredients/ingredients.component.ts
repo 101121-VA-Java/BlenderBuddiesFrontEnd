@@ -52,7 +52,7 @@ export class IngredientsComponent implements OnInit {
       .createNewIngredient(name, Number(carbs), Number(prot), Number(phat), Number(calo), Number(suga))
       .subscribe((data: any) => {
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-          this.router.navigate([currentRoute]);
+          this.router.navigate(['ingredients']);
       })
       });
   }
