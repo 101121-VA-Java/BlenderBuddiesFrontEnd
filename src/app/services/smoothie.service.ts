@@ -14,15 +14,21 @@ export class SmoothieService {
     return this.http.get(`${environment.API_URL}/smoothies`);
   }
 
+  getMostSmoothies(id: number): Observable<any> {
+    return this.http.get(`${environment.API_URL}/smoothies?id=${id}`);
+  }
+
   getSmoothiesById(id: number): Observable<any> {
     return this.http.get(`${environment.API_URL}/smoothies/${id}`);
   }
 
-
-
+  createNewSmoothie(name: string, descrip: string, url: string, type: string, userId: number, id: Ingredient[]) {
+    let newSmoothie: Smoothie =
+      { name: name, descrip: descrip, url: url, type: type, user: { userId: userId }, recipe: id }
+    return this.http.post(`${environment.API_URL}/smoothies`, newSmoothie);
+  }
 
 }
-
 
 interface Ingredient {
   id: number;

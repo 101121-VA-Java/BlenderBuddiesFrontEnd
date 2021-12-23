@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SmoothiesComponent } from './components/smoothies/smoothies.component';
 import { UsersComponent } from './components/users/users.component';
-import { AdminsComponent } from './components/admins/admins.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -18,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UniquePipe } from './unique.pipe';
 import { ProfileUpdateComponent } from './components/profile-update/profile-update.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -27,7 +27,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     AppComponent,
     SmoothiesComponent,
     UsersComponent,
-    AdminsComponent,
     RecipeComponent,
     IngredientsComponent,
     NavComponent,
@@ -36,7 +35,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     SmoothieFormComponent,
     UniquePipe,
     ProfileComponent,
-    ProfileUpdateComponent
+    ProfileUpdateComponent,
+    FooterComponent
   ],
   
   imports: [

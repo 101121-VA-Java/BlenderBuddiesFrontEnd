@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileService } from 'src/app/services/profile.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { User } from 'src/app/models/user';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+
   users: any;
   user: any;
 
@@ -27,11 +27,8 @@ export class UsersComponent implements OnInit {
   }
 
   updateSelectedUser(id: any) {
-    
     let userId = parseInt(id.id);
-    console.log(userId);
     let currentUser = this.authService.getUser();
-    // this.profileService.getUserById(id)
 
     if (userId != null && userId != currentUser && userId != 1) {
       this.profileService.updateUserRole(userId)

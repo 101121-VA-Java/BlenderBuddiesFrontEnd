@@ -8,22 +8,22 @@ import { IngredientService } from 'src/app/services/ingredient.service';
   styleUrls: ['./ingredients.component.css'],
 })
 export class IngredientsComponent implements OnInit {
-  openform!: boolean;
 
-  constructor(
-    private ingredientService: IngredientService,
-    private router: Router
-  ) {}
+  constructor(private ingredientService: IngredientService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllIngredients();
   }
 
+  openform!: boolean;
+  message: string = '';
+  ingredients?: any;
+  someBoolean: boolean = false;
+
   onClickOpenForm() {
     this.openform = true;
   }
-  message: string = '';
-  ingredients?: any;
+
   ingrSubmit() {
     // add ingredient to database, then redirect to ingredients page
     this.router.navigate(['ingredients']);
@@ -39,26 +39,18 @@ export class IngredientsComponent implements OnInit {
   getAllIngredients() {
     this.ingredientService.getAllIngredients().subscribe((response: any) => {
       this.ingredients = response;
-      console.log(this.ingredients[0].nutritions);
     });
   }
-  someBoolean: boolean = false;
+
   ingredHider() {
     this.someBoolean = !this.someBoolean;
   }
 
-  registerIngredient(
-    name: string,
-    carbs: string,
-    prot: string,
-    phat: string,
-    calo: string,
-    suga: string
-  ) {
+  registerIngredient(name: string, carbs: string, prot: string, phat: string, calo: string, suga: string) {
     this.ingredientService
       .createNewIngredient(name, Number(carbs), Number(prot), Number(phat), Number(calo), Number(suga))
       .subscribe((data: any) => {
-        // window.location.reload();
+        window.location.reload();
       });
   }
 }

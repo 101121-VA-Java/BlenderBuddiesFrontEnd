@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -29,23 +29,9 @@ export class IngredientService {
     return this.http.post(`${environment.API_URL}/ingredients`, newIngredient);
   }
 
-  createNewSmoothie(name: string, descrip: string, url: string, type: string, userId: number, id: Ingredient1[]) {
-    let newSmoothie: Smoothie =
-      { name: name, descrip: descrip, url: url, type: type, user: { userId: userId }, recipe: id }
-    console.log(newSmoothie);
-    return this.http.post(`${environment.API_URL}/smoothies`, newSmoothie);
-  }
-
-
 }
 
 interface Ingredient {
-  name: string;
-  nutritions: Nutritions
-}
-
-interface Ingredient1 {
-  id: number;
   name: string;
   nutritions: Nutritions
 }
@@ -58,20 +44,4 @@ interface Nutritions {
   sugar: number;
 }
 
-interface Smoothie {
-  name: string;
-  descrip: string;
-  url: string;
-  type: string;
-  user: User;
-  recipe: Ingredient1[];
-}
-
-interface User {
-  userId: number;
-}
-
-interface Recipe {
-  id: number;
-}
 

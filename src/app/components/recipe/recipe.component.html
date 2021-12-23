@@ -1,53 +1,53 @@
 <h3>{{smoothie.name}}</h3>
 <h4>{{smoothie.descrip}}</h4>
-<div class="card-image">
-    <img src= {{smoothie.url}} />
-  </div>
+
+<img src={{smoothie.url}} />
+
 <label>Fruits</label>
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Calories</th>
-        <th scope="col">Carbohydrates</th>
-        <th scope="col">Protein</th>
-        <th scope="col">Fat</th>
-        <th scope="col">Sugar</th>
-      </tr>
-    </thead>
-    <tbody *ngFor='let ingredient of recipe'>
-        <tr>
-          <td>{{ingredient.name}}</td>
-          <td>{{ingredient.nutritions.calories}}</td>
-          <td>{{ingredient.nutritions.carbohydrates}}</td>
-          <td>{{ingredient.nutritions.protein}}</td>
-          <td>{{ingredient.nutritions.fat}}</td>
-          <td>{{ingredient.nutritions.sugar}}</td>
-        </tr>
-        <tr>
-      </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Calories</th>
+      <th scope="col">Carbohydrates</th>
+      <th scope="col">Protein</th>
+      <th scope="col">Fat</th>
+      <th scope="col">Sugar</th>
+    </tr>
+  </thead>
+  <tbody *ngFor='let ingredient of recipe'>
+    <tr>
+      <td>{{ingredient.name}}</td>
+      <td>{{ingredient.nutritions.calories}}</td>
+      <td>{{ingredient.nutritions.carbohydrates}}</td>
+      <td>{{ingredient.nutritions.protein}}</td>
+      <td>{{ingredient.nutritions.fat}}</td>
+      <td>{{ingredient.nutritions.sugar}}</td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">Total Calories</th>
-        <th scope="col">Total Carbohydrates</th>
-        <th scope="col">Total Protein</th>
-        <th scope="col">Total Fat</th>
-        <th scope="col">Total Sugar</th>
-      </tr>
-    </thead>
-    <tbody >
-        <tr>
-          <td></td>
-          <td>{{totalCalo | number}}</td>
-          <td>{{totalCarbs | number}}</td>
-          <td>{{totalProt | number}}</td>
-          <td>{{totalPhat | number}}</td>
-          <td>{{totalSuga | number}}</td>
-        </tr>
-        <tr>
-      </tbody>
-  </table>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Total Calories</th>
+      <th scope="col">Total Carbohydrates</th>
+      <th scope="col">Total Protein</th>
+      <th scope="col">Total Fat</th>
+      <th scope="col">Total Sugar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td>{{totalCalo | number}}</td>
+      <td>{{totalCarbs | number}}</td>
+      <td>{{totalProt | number}}</td>
+      <td>{{totalPhat | number}}</td>
+      <td>{{totalSuga | number}}</td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
