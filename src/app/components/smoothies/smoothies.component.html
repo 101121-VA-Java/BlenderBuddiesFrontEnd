@@ -1,6 +1,9 @@
+<input class="btn btn-outline-secondary" (click)="getAllSmoothies(); buttonHider()" value="Show All Recipies" *ngIf="!someBoolean"/>
+<input class="btn btn-outline-secondary" (click)="getMostSmoothies(); buttonHider()" value="Show Your Recipies" *ngIf="someBoolean"/>
+
 <div class="container" style="margin-top:50px;">
   <div class="row">
-    <div class="col-md-3" *ngFor='let smoothie of smoothies | unique'>
+    <div class="col-md-3" *ngFor='let smoothie of smoothies'>
       
         <div class="card-sl">
           <div class="card-image">
@@ -9,7 +12,7 @@
 
           <a class="card-action"><i class="fa fa-heart"></i></a>
           <div id="smoothie_name" class="card-heading">
-            {{smoothie.name}}
+            {{smoothie.name}} by {{smoothie.user.username}}
           </div>
           <div id="smoothie_descrip" class="card-text">
             {{smoothie.descrip}}

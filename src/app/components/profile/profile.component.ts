@@ -14,29 +14,19 @@ export class ProfileComponent implements OnInit {
   constructor(private profileService: ProfileService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.currentUser = this.token.getUser();
     this.getProfile()
-   
   }
 
   redirProfileUpdate() {
     this.router.navigate(['profile-update']);
   }
 
-  // getProfile(){
-  //   // this.profileService.getUserById().subscribe((response) => {
-  //     this.authService.getUser = response;
-  //     console.log(response);
-  //   }); 
-  // }
   profile?: any
   getProfile(){
     let id = this.authService.getUser();
     this.profileService.getUserById(id).subscribe((response) => {
       this.profile = response;
-      console.log(this.profile);
     });
-    
     
   }
 

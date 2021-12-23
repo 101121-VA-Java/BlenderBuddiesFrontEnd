@@ -13,24 +13,42 @@ export class SmoothiesComponent implements OnInit {
   constructor(private authService: AuthService, private smoothieService: SmoothieService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getAllSmoothies()
+    this.getMostSmoothies()
   }
 
   smoothies?: any;
 
-  getAllSmoothies(){
+  getAllSmoothies() {
     this.smoothieService.getAllSmoothies().subscribe((response: any) => {
       this.smoothies = response;
-      console.log(this.smoothies);
     });
+
+  }
+
+  getMostSmoothies() {
+    let id = this.authService.getUser();
+
+    if (id != null && id != 1) {
+      this.smoothieService.getMostSmoothies(id).subscribe((response: any) => {
+        this.smoothies = response;
+      });
+    }
+    if (id === 1) {
+      this.getAllSmoothies()
+    }
 
   }
 
   // redirect function for button
   smoothieRecipeRedir(id: any) {
-    console.log("redirecting to smoothie recipe...");
     let smoothieId = id.id
     sessionStorage.setItem("smoothieId", smoothieId);
     this.router.navigate(['/recipe']);
   }
+
+  someBoolean: boolean = false;
+  buttonHider() {
+    this.someBoolean = !this.someBoolean;
+  }
+
 }

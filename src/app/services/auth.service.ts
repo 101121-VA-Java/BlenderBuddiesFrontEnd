@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map} from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Principal } from '../models/principal';
 
@@ -45,11 +45,8 @@ export class AuthService {
     let token = sessionStorage.getItem("token");
     if(token != null){
       let id = token.split(":")[0];
-      if(id === '1') {
-        return 1;
-      } else {
-        return 2;
-      }
+      let userId = parseInt(id);
+      return userId;
     }
     return null;
   }
@@ -64,10 +61,7 @@ export class AuthService {
   }
   
   registerUser(firstName: string, lastName: string, username: string, password: string, email: string){
-    
     let newUser: any = {username, password, firstName, lastName, email, role:'USER'}
-    console.log(newUser);
-    
     return this.http.post(`${environment.API_URL}/users`, newUser);
   }
  
