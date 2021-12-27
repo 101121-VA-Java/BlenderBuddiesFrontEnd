@@ -1,12 +1,16 @@
-/* #loginForm{
-    background: #654ea3;
-    background: linear-gradient(to right, #e96443, #904e95);
-    min-height: 100vh;
-    overflow-x: hidden
-} */
-/* input {
-    background: magenta;
-} */
-.btn{
-    background:palegoldenrod;
+
+input {
+  border: 1px solid black;
+  background-color: #ffffff85;
+}
+
+.btn {
+  background-image: url(../../../assets/LEMON-PATTERN.jpg);
+  color: purple;
+  font-weight: 650;
+}
+
+label{
+    font-size: x-large;
+    font-weight: 450;
 }

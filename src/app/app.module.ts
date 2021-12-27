@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,7 +45,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

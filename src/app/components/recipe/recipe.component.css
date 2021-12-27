@@ -1,6 +1,59 @@
-img {
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
+/* img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 1px solid black;
+} */
+
+input {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+}
+
+label {
+  font-size: x-large;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: 350;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+table {
+  border: 3px solid black;
+  background-color: #ffffff85;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  font-weight: 350;
+  font-size: xx-large;
+}
+
+h4 {
+  border: 3px solid black;
+  display: flex;
+  background-color: #ffffff85;
+  justify-content: left;
+}
+
+.container {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Resize images */
+.container img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 8px 8px 0px 0;
+  border: 1px solid black;
+  overflow: hidden;
+
+}

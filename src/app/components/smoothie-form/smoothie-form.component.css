@@ -1,3 +1,31 @@
-.btn{
-    background:palegoldenrod;
+.btn {
+  background-image: url(../../../assets/LEMON-PATTERN.jpg);
+  color: purple;
+  font-weight: 650;
+}
+
+table {
+  border: 3px solid black;
+  background-color: #ffffff85;
+}
+
+label {
+  font-size: x-large;
+}
+
+input {
+  border: 1px solid black;
+}
+
+textarea {
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 150px;
+  resize: none;
+  width: 50%;
+}
+
+span + span {
+    margin-left: 10px;
 }

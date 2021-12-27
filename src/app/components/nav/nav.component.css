@@ -1,3 +1,15 @@
 nav {
-    background:lightcoral;
+    background-image: url(../../../assets/LEMON-PATTERN.jpg);
+}
+img{
+    width: 60px;
+}
+a.nav-link{
+    color:purple;
+    display: flex;
+    font-size: large;
+    font-weight: 600;
+    align-items:flex-end;
+    justify-content: center;
+    
 }

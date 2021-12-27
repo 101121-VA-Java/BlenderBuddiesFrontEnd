@@ -1,43 +1,28 @@
-<!-- <div class="form-group">
-    <label for="name">Name Your Smoothie</label>
-    <input type="text" class="form-control" id="name" placeholder="Smoothie Name" #name />
-</div> -->
-<!-- Fields  for ingredients-->
-
-<!-- <div class="form-group">
-    <label for="ingredient1">Ingredient</label>
-    <input type="text" class="form-control" id="ingredient1" placeholder="Ingredient" #ingredient />
-</div>
+<br>
 <div class="form-group">
-    <label for="ingredient2">Ingredient</label>
-    <input type="text" class="form-control" id="ingredient2" placeholder="Ingredient" #ingredient />
+  <label for="calo">Search for ingredient</label>
+  <input type="text" class="form-control" style="width: 10%;"  name="fruit" placeholder="Enter ingredient name" #fruit/>
 </div>
-<div class="form-group">
-    <label for="ingredient3">Ingredient</label>
-    <input type="text" class="form-control" id="ingredient3" placeholder="Ingredient" #ingredient />
-</div>
-<div class="form-group">
-    <label for="ingredient4">Ingredient</label>
-    <input type="text" class="form-control" id="ingredient4" placeholder="Ingredient" #ingredient />
-</div>
-<input class="btn btn-outline-secondary" value="Create Smoothie"> -->
-<input class="inputstyle" type="text" name="fruit" #fruit> 
+ 
+<br>
 <input class="btn btn-outline-secondary" value="Add"  (click)= "getIngredientbyName(fruit.value)">
+<span></span>  <span></span>
 <input class="btn btn-outline-secondary" value="Remove"  (click)= "removeIngredient(fruit.value)">
-<input class="btn btn-outline-secondary" value="Blend"  (click)= "createSmoothie(name.value, descrip.value, url.value)">
 <br>
 <br>
 <div class="form-group">
-  <label for="calo">Name</label>
-  <input type="text" class="form-control" id="name" #name />
+  <label for="calo">Smoothie Name</label>
+  <input type="text" class="form-control" style="width: 10%;" id="name" placeholder="Enter smoothie name" #name />
 </div>
+<br>
 <div class="form-group">
   <label for="carb">Description</label>
-  <input type="text" class="form-control" id="descrip" #descrip />
 </div>
+<textarea id="subject" name="subject" placeholder="Enter smoothie description" id="descrip"  #descrip></textarea>
+<br>
 <div class="form-group">
   <label for="carb">Image URL</label>
-  <input type="text" class="form-control" id="url" #url />
+  <input type="text" class="form-control"  id="url" style="width: 50%;" placeholder="Enter smoothie image url" #url />
 </div>
 <br>
 <label>Fruits</label>
@@ -46,10 +31,10 @@
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Calories</th>
-        <th scope="col">Carbohydrates</th>
-        <th scope="col">Protein</th>
-        <th scope="col">Fat</th>
-        <th scope="col">Sugar</th>
+        <th scope="col">Carbohydrates (g)</th>
+        <th scope="col">Protein (g)</th>
+        <th scope="col">Fat (g)</th>
+        <th scope="col">Sugar (g)</th>
       </tr>
     </thead>
     <tbody *ngFor='let ingredient of smoothie'>
@@ -70,10 +55,10 @@
       <tr>
         <th scope="col"></th>
         <th scope="col">Total Calories</th>
-        <th scope="col">Total Carbohydrates</th>
-        <th scope="col">Total Protein</th>
-        <th scope="col">Total Fat</th>
-        <th scope="col">Total Sugar</th>
+        <th scope="col">Total Carbohydrates (g)</th>
+        <th scope="col">Total Protein (g)</th>
+        <th scope="col">Total Fat (g)</th>
+        <th scope="col">Total Sugar (g)</th>
       </tr>
     </thead>
     <tbody >
@@ -88,3 +73,5 @@
         <tr>
       </tbody>
   </table>
+
+  <input class="btn btn-outline-secondary" value="Blend"  (click)= "createSmoothie(name.value, descrip.value, url.value)">
