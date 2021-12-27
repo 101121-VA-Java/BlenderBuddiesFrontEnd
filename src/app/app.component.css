@@ -20,8 +20,9 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
   }
 main {
-  background: #654ea3;
-  background: linear-gradient(to right, #e96443, #904e95);
+  /* background: #654ea3;
+  background: linear-gradient(to right, #e96443, #904e95); */
+  background-image: url(../assets/STRAWBERRY-BACKGROUND.jpg);
   min-height: 100vh;
   overflow-x: hidden
 }

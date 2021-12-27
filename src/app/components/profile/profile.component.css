@@ -3,7 +3,18 @@
 }
 
 .cover {
-    background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+    background-image: url(../../../assets/MIXED.jpg);
     background-size: cover;
     background-repeat: no-repeat
+}
+
+.btn{
+    background-image: url(../../../assets/LEMON-PATTERN.jpg);
+    color: purple;
+    font-weight: 650;
+}
+p{
+    color: black;
+    font-size: large;
+    font-weight: 450;
 }

@@ -1,18 +1,23 @@
-<h3>{{smoothie.name}}</h3>
+<br>
+<h1>{{smoothie.name}}</h1>
+
+<div class="container">
+<img src={{smoothie.url}} />
+</div>
+
+<label>Description</label>
 <h4>{{smoothie.descrip}}</h4>
 
-<img src={{smoothie.url}} />
-
-<label>Fruits</label>
+<label>Recipe</label>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Calories</th>
-      <th scope="col">Carbohydrates</th>
-      <th scope="col">Protein</th>
-      <th scope="col">Fat</th>
-      <th scope="col">Sugar</th>
+      <th scope="col">Carbohydrates (g)</th>
+      <th scope="col">Protein (g)</th>
+      <th scope="col">Fat (g)</th>
+      <th scope="col">Sugar (g)</th>
     </tr>
   </thead>
   <tbody *ngFor='let ingredient of recipe'>
@@ -33,10 +38,10 @@
     <tr>
       <th scope="col"></th>
       <th scope="col">Total Calories</th>
-      <th scope="col">Total Carbohydrates</th>
-      <th scope="col">Total Protein</th>
-      <th scope="col">Total Fat</th>
-      <th scope="col">Total Sugar</th>
+      <th scope="col">Total Carbohydrates (g)</th>
+      <th scope="col">Total Protein (g)</th>
+      <th scope="col">Total Fat (g)</th>
+      <th scope="col">Total Sugar (g)</th>
     </tr>
   </thead>
   <tbody>

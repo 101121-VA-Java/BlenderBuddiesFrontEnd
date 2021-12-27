@@ -4,41 +4,44 @@
   </h1>
   <input class="btn btn-outline-secondary" (click)="ingredHider()" value="Make New Ingredient" />
   <div *ngIf="someBoolean">
+    <br>
     <div>
-      Add New Ingredient
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter Ingredient Name" #name />
+      <input type="text" class="form-control" id="name" style="width: 10%;" placeholder="Ingredient Name" #name />
     </div>
 
     <br>
-
-    <div>
-      Nutrition:
-    </div>
     <div class="form-group">
       <label for="calo">Calories</label>
-      <input type="text" class="form-control" id="calo" #calo />
+      <input type="text" class="form-control" id="calo" style="width: 10%;" placeholder="# of Calories" #calo />
     </div>
+    <br>
     <div class="form-group">
       <label for="carb">Carbohydrates</label>
-      <input type="text" class="form-control" id="carb" #carb />
+      <input type="text" class="form-control" id="carb" style="width: 10%;" placeholder="Grams of Carbohydrates"
+        #carb />
     </div>
+    <br>
     <div class="form-group">
       <label for="prot">Protein</label>
-      <input type="text" class="form-control" id="prot" #prot />
+      <input type="text" class="form-control" id="prot" style="width: 10%;" placeholder="Grams of Protein" #prot />
     </div>
+    <br>
     <div class="form-group">
       <label for="phat">Fat</label>
-      <input type="text" class="form-control" id="phat" #phat />
+      <input type="text" class="form-control" id="phat" style="width: 10%;" placeholder="Grams of Fat" #phat />
     </div>
+    <br>
     <div class="form-group">
       <label for="suga">Sugar</label>
-      <input type="text" class="form-control" id="suga" #suga />
+      <input type="text" class="form-control" id="suga" style="width: 10%;" placeholder="Grams of Sugar" #suga />
     </div>
+    <br>
     <button class="btn btn-outline-secondary" value="Submit"
       (click)="registerIngredient(name.value, carb.value, prot.value, phat.value, calo.value, suga.value)">Submit</button>
   </div>
 </div>
+<br>
 
 <h3>
   <table class="table">
@@ -46,10 +49,10 @@
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Calories</th>
-        <th scope="col">Carbohydrates</th>
-        <th scope="col">Protein</th>
-        <th scope="col">Fat</th>
-        <th scope="col">Sugar</th>
+        <th scope="col">Carbohydrates (g)</th>
+        <th scope="col">Protein (g)</th>
+        <th scope="col">Fat (g)</th>
+        <th scope="col">Sugar (g)</th>
       </tr>
     </thead>
     <tbody *ngFor='let ingredient of ingredients | unique'>
@@ -67,4 +70,3 @@
 </h3>
 <!-- <input class="inputstyle" type="text" name="username" #username> -->
 <!-- <input class="btn btn-outline-secondary" value="Search" (click)="getAll()" > -->
-

@@ -1,3 +1,4 @@
+<br>
 <input class="btn btn-outline-secondary" (click)="getAllSmoothies(); buttonHider()" value="Show All Recipies" *ngIf="!someBoolean"/>
 <input class="btn btn-outline-secondary" (click)="getMostSmoothies(); buttonHider()" value="Show Your Recipies" *ngIf="someBoolean"/>
 
@@ -12,10 +13,10 @@
 
           <a class="card-action"><i class="fa fa-heart"></i></a>
           <div id="smoothie_name" class="card-heading">
-            {{smoothie.name}} by {{smoothie.user.username}}
+            {{smoothie.name}} 
           </div>
           <div id="smoothie_descrip" class="card-text">
-            {{smoothie.descrip}}
+            Created by {{smoothie.user.username}}
           </div>
           <a class="card-button" id={{smoothie.smoothId}} #id (click)="smoothieRecipeRedir(id)"> See Recipe</a>
         

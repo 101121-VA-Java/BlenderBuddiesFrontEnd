@@ -1,6 +1,26 @@
 th, td {
     padding: 5px;
 }
-.btn{
-    background:palegoldenrod;
+
+h6{
+    border: 3px solid black;
+    display: flex;
+    background-color:#ffffff85;
+    justify-content: center;
+    
 }
+.btn{
+    background-image: url(../../../assets/LEMON-PATTERN.jpg);
+    color: purple;
+    font-weight: 650;
+}
+td{
+    font-size: large;
+    font-weight: 650;
+}
+th{
+    font-size: large;
+    font-weight: 900; 
+    
+}
+

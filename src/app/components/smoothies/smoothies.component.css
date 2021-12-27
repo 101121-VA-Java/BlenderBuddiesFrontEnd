@@ -1,6 +1,8 @@
 /*  Helper Styles */
 .btn{
-    background:palegoldenrod;
+    background-image: url(../../../assets/LEMON-PATTERN.jpg);
+    color: purple;
+    font-weight: 650;
 }
 body {
     font-family: Varela Round;
@@ -45,7 +47,7 @@ a {
 }
 
 .card-heading {
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
     background: #fff;
     padding: 10px 15px;
@@ -54,7 +56,7 @@ a {
 .card-text {
     padding: 10px 15px;
     background: #fff;
-    font-size: 14px;
+    font-size: 20px;
     color: #636262;
 }
 

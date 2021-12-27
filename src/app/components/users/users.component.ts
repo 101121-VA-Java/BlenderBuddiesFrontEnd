@@ -10,10 +10,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
   users: any;
   user: any;
-
+  displayedColumns: string[] = ['User ID', 'First Name', 'Last Name', 'Username', 'Email', 'Role'];
   constructor(private authService: AuthService, private profileService: ProfileService, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
